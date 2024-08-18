@@ -32,6 +32,7 @@ Dự án này sử dụng các thư viện sau:
 - **OpenCV**: Thư viện xử lý ảnh.
 - **Pillow**: Thư viện xử lý ảnh, dùng để lấy kích thước của ảnh.
 - **Turtle**: Thư viện đồ họa có sẵn trong Python để vẽ đường biên.
+- **Pygame**: Ở đầy dùng để phát mp3.
 
 Để cài đặt các thư viện này, hãy mở Command Prompt và chạy các lệnh sau:
 
@@ -40,3 +41,4 @@ Dự án này sử dụng các thư viện sau:
    pip install opencv-python
    pip install pillow
    pip install PythonTurtle
+   pip install pygame

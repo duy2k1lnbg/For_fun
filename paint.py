@@ -2,6 +2,12 @@ import turtle
 import os
 import cv2
 from PIL import Image
+import pygame
+
+# Khởi tạo pygame mixer
+pygame.mixer.init()
+sound = pygame.mixer.Sound("a.mp3")
+#sound.play()
 
 # Hàm lấy kích thước của ảnh
 def get_image_size(image_path):
@@ -54,7 +60,7 @@ def setup_turtle(image_path, directory):
     turtle.speed(0)
     turtle.showturtle()
     turtle.color("red")
-    # turtle.tracer(0) # Nếu muốn tắt hiệu ứng vẽ liên tục
+    #turtle.tracer(0) # Nếu muốn tắt hiệu ứng vẽ liên tục
     turtle.hideturtle()
     
     # Duyệt qua các file trong thư mục và vẽ các đường biên
@@ -77,22 +83,22 @@ def show_image(image_path, window_name):
 # Hàm chính thực thi chương trình
 def main():
     # Xử lý ảnh đầu tiên
-    image_path1 = 'v1.jpg'
+    image_path1 = 'vn.jpg'
     show_image(image_path1, 'Image 1')
     directory1 = 'file_img/file1'
     setup_turtle(image_path1, directory1)
 
-    # Xử lý ảnh thứ hai
-    image_path2 = 'v2.jpg'
-    show_image(image_path2, 'Image 2')
-    directory2 = 'file_img/file2'
-    setup_turtle(image_path2, directory2)
+    # # Xử lý ảnh thứ hai
+    # image_path2 = 'v2.jpg'
+    # show_image(image_path2, 'Image 2')
+    # directory2 = 'file_img/file2'
+    # setup_turtle(image_path2, directory2)
 
-    # Xử lý ảnh thứ ba
-    image_path3 = 'v3.jpg'
-    show_image(image_path3, 'Image 3')
-    directory3 = 'file_img/file3'
-    setup_turtle(image_path3, directory3)
+    # # Xử lý ảnh thứ ba
+    # image_path3 = 'v3.jpg'
+    # show_image(image_path3, 'Image 3')
+    # directory3 = 'file_img/file3'
+    # setup_turtle(image_path3, directory3)
     
     # Đợi phím nhấn và kết thúc chương trình
     cv2.waitKey(0)
