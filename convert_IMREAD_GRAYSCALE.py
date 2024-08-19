@@ -4,8 +4,8 @@ import os
 import shutil
 
 # Đường dẫn đến các thư mục cần xóa
-base_output_folder = 'coordinates_output_IMREAD_GRAYSCALE'
-images_output_folder = 'images_output_IMREAD_GRAYSCALE'
+base_output_folder = 'coordinates_output'
+images_output_folder = 'images_output'
 
 # Xóa các thư mục nếu chúng tồn tại
 if os.path.exists(base_output_folder):
@@ -79,7 +79,7 @@ marr_hildreth_blurred = cv2.GaussianBlur(binary_float, (5, 5), 0)
 marr_hildreth_edges = cv2.Laplacian(marr_hildreth_blurred, cv2.CV_64F)
 
 # Bộ lọc Canny
-canny_edges = cv2.Canny(binary_image, 100, 200)
+canny_edges = cv2.Canny(binary_image, 10, 200)
 
 # Bộ lọc Difference of Gaussians (DoG)
 gaussian1 = cv2.GaussianBlur(binary_float, (5, 5), 1)
@@ -103,7 +103,7 @@ def save_contours_to_txt(contours, filename):
 # Hàm chuyển đổi ảnh thành tọa độ biên
 def extract_contours_from_edges(edges, method_name):
     contours, _ = cv2.findContours(edges.astype(np.uint8), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
-    folder = f'coordinates_output_IMREAD_GRAYSCALE/{method_name}'
+    folder = f'coordinates_output/{method_name}'
     os.makedirs(folder, exist_ok=True)
     for i, contour in enumerate(contours):
         # Chuyển đổi contours từ (x, y) thành (x, y) dạng float
@@ -128,18 +128,18 @@ marr_hildreth_on_white = draw_edges_on_white(np.uint8(marr_hildreth_edges))
 
 # Lưu các ảnh biên vào file
 def save_images():
-    os.makedirs('images_output_IMREAD_GRAYSCALE', exist_ok=True)
-    cv2.imwrite('images_output_IMREAD_GRAYSCALE/canny_edges.png', canny_on_white)
-    cv2.imwrite('images_output_IMREAD_GRAYSCALE/dog_edges.png', dog_on_white)
-    cv2.imwrite('images_output_IMREAD_GRAYSCALE/sobel_edges.png', sobel_on_white)
-    cv2.imwrite('images_output_IMREAD_GRAYSCALE/laplacian_edges.png', laplacian_on_white)
-    cv2.imwrite('images_output_IMREAD_GRAYSCALE/prewitt_edges.png', prewitt_on_white)
-    cv2.imwrite('images_output_IMREAD_GRAYSCALE/scharr_edges.png', scharr_on_white)
-    cv2.imwrite('images_output_IMREAD_GRAYSCALE/roberts_cross_edges.png', roberts_cross_on_white)
-    cv2.imwrite('images_output_IMREAD_GRAYSCALE/kirsch_edges.png', kirsch_on_white)
-    cv2.imwrite('images_output_IMREAD_GRAYSCALE/gabor_edges.png', gabor_on_white)
-    cv2.imwrite('images_output_IMREAD_GRAYSCALE/lap_of_gaussian_edges.png', log_on_white)
-    cv2.imwrite('images_output_IMREAD_GRAYSCALE/marr_hildreth_edges.png', marr_hildreth_on_white)
+    os.makedirs('images_output', exist_ok=True)
+    cv2.imwrite('images_output/canny_edges.png', canny_on_white)
+    cv2.imwrite('images_output/dog_edges.png', dog_on_white)
+    cv2.imwrite('images_output/sobel_edges.png', sobel_on_white)
+    cv2.imwrite('images_output/laplacian_edges.png', laplacian_on_white)
+    cv2.imwrite('images_output/prewitt_edges.png', prewitt_on_white)
+    cv2.imwrite('images_output/scharr_edges.png', scharr_on_white)
+    cv2.imwrite('images_output/roberts_cross_edges.png', roberts_cross_on_white)
+    cv2.imwrite('images_output/kirsch_edges.png', kirsch_on_white)
+    cv2.imwrite('images_output/gabor_edges.png', gabor_on_white)
+    cv2.imwrite('images_output/lap_of_gaussian_edges.png', log_on_white)
+    cv2.imwrite('images_output/marr_hildreth_edges.png', marr_hildreth_on_white)
 
 # Lưu các tọa độ biên
 def save_all_contours():

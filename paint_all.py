@@ -8,7 +8,7 @@ image = cv2.imread(image_path)
 height, width = image.shape[:2]
 
 # Tạo thư mục lưu trữ tọa độ
-base_output_folder = 'coordinates_output_COLOR_BGR2GRAY'
+base_output_folder = 'coordinates_output'
 
 # Hàm vẽ các đường biên từ tọa độ
 def draw_contours_from_file(file_folder, image_shape):

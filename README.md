@@ -5,9 +5,8 @@
 Dự án này bao gồm các tập tin Python:
 1. **`convert_img_to_txt.py`**: Chuyển đổi ảnh thành các tọa độ đường biên và lưu chúng vào các file văn bản.
 2. **`paint.py`**: Vẽ các đường biên từ các file văn bản đã lưu lên các cửa sổ Turtle.
-3. **`convert_IMREAD_GRAYSCALE.py`**: Áp dụng các thuật toán để ra các kết quả ảnh khác nhau. Kết quả 'coordinates_output_IMREAD_GRAYSCALE' và 'images_output_IMREAD_GRAYSCALE'.
-4. **`convert_COLOR_BGR2GRAY.py`**: Áp dụng các thuật toán để ra các kết quả ảnh khác nhau. Kết quả 'coordinates_output_COLOR_BGR2GRAY' và 'images_output_COLOR_BGR2GRAY'.
-6. **`paint_all.py`**: Vẽ các đường biên từ các folder 'coordinates_output_IMREAD_GRAYSCALE' hoặc 'coordinates_output_COLOR_BGR2GRAY' văn bản đã lưu lên các cửa sổ.
+3. **`convert_IMREAD_GRAYSCALE.py`**: Áp dụng các thuật toán để ra các kết quả ảnh khác nhau. Kết quả 'coordinates_output' và 'images_output'.
+4. **`paint_all.py`**: Vẽ các đường biên từ các folder 'coordinates_output' văn bản đã lưu lên các cửa sổ.
 ### Một số thuật toán tìm biên áp dụng
 Hướng dẫn này cung cấp thông tin về các thuật toán phát hiện đường biên được triển khai trong dự án này. Các thuật toán bao gồm Canny, Sobel, Laplacian, Prewitt, Scharr, Roberts Cross, Kirsch, Gabor, Laplacian of Gaussian (LoG), Marr-Hildreth, và Difference of Gaussians (DoG).
 ## Cài Đặt Môi Trường
