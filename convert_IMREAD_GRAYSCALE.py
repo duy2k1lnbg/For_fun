@@ -1,6 +1,17 @@
 import cv2
 import numpy as np
 import os
+import shutil
+
+# Đường dẫn đến các thư mục cần xóa
+base_output_folder = 'coordinates_output_IMREAD_GRAYSCALE'
+images_output_folder = 'images_output_IMREAD_GRAYSCALE'
+
+# Xóa các thư mục nếu chúng tồn tại
+if os.path.exists(base_output_folder):
+    shutil.rmtree(base_output_folder)
+if os.path.exists(images_output_folder):
+    shutil.rmtree(images_output_folder)
 
 # Đọc ảnh ở chế độ grayscale
 image = cv2.imread('vn.jpg', cv2.IMREAD_GRAYSCALE)
