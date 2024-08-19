@@ -85,14 +85,14 @@ def main():
     # Xử lý ảnh đầu tiên
     image_path1 = 'vn.jpg'
     show_image(image_path1, 'Image 1')
-    directory1 = 'file_img/file1'
+    directory1 = 'file_img_test/file1'
     setup_turtle(image_path1, directory1)
 
-    # # Xử lý ảnh thứ hai
-    # image_path2 = 'v2.jpg'
-    # show_image(image_path2, 'Image 2')
-    # directory2 = 'file_img/file2'
-    # setup_turtle(image_path2, directory2)
+    # Xử lý ảnh thứ hai
+    image_path2 = 'vn.jpg'
+    show_image(image_path2, 'Image 2')
+    directory2 = 'file_img_test/file2'
+    setup_turtle(image_path2, directory2)
 
     # # Xử lý ảnh thứ ba
     # image_path3 = 'v3.jpg'
