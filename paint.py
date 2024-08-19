@@ -20,11 +20,23 @@ def get_image_size(image_path):
 
 # Hàm đọc tọa độ từ file văn bản
 def read_coordinates(filename):
+    # coordinates = []
+    # with open(filename, 'r') as file:
+    #     for line in file:
+    #         x, y = map(int, line.strip().split())
+    #         coordinates.append((x, y))
+    # return coordinates
+
     coordinates = []
     with open(filename, 'r') as file:
         for line in file:
-            x, y = map(int, line.strip().split())
-            coordinates.append((x, y))
+            line = line.strip()
+            if line:  # Kiểm tra nếu dòng không trống
+                try:
+                    x, y = map(int, line.split())
+                    coordinates.append((x, y))
+                except ValueError:
+                    print(f"Skipping invalid line: {line}")
     return coordinates
 
 # Hàm chuyển đổi tọa độ từ hệ tọa độ ảnh sang hệ tọa độ của Turtle
@@ -85,14 +97,14 @@ def main():
     # Xử lý ảnh đầu tiên
     image_path1 = 'vn.jpg'
     show_image(image_path1, 'Image 1')
-    directory1 = 'file_img_test/file1'
+    directory1 = 'coordinates_output_IMREAD_GRAYSCALE/canny_edges'
     setup_turtle(image_path1, directory1)
 
-    # Xử lý ảnh thứ hai
-    image_path2 = 'vn.jpg'
-    show_image(image_path2, 'Image 2')
-    directory2 = 'file_img_test/file2'
-    setup_turtle(image_path2, directory2)
+    # # Xử lý ảnh thứ hai
+    # image_path2 = 'vn.jpg'
+    # show_image(image_path2, 'Image 2')
+    # directory2 = 'file_img_test/file2'
+    # setup_turtle(image_path2, directory2)
 
     # # Xử lý ảnh thứ ba
     # image_path3 = 'v3.jpg'
