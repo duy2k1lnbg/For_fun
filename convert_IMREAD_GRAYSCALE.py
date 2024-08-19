@@ -14,7 +14,7 @@ if os.path.exists(images_output_folder):
     shutil.rmtree(images_output_folder)
 
 # Đọc ảnh ở chế độ grayscale
-image = cv2.imread('vn.jpg', cv2.IMREAD_GRAYSCALE)
+image = cv2.imread('vn1.png', cv2.IMREAD_GRAYSCALE)
 
 # # Chuyển ảnh sang nhị phân
 # _, binary_image = cv2.threshold(image, 127, 255, cv2.THRESH_BINARY)

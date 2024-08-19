@@ -14,7 +14,7 @@ if os.path.exists(base_folder):
 os.makedirs(base_folder)
 
 # Danh sách các ảnh cần xử lý
-images = ['vn.jpg', 'v2.jpg', 'v3.jpg']
+images = ['vn1.png', 'v2.jpg', 'v3.jpg']
 
 # Tên thư mục tương ứng với từng ảnh
 folder_names = ['file1', 'file2', 'file3']
@@ -77,7 +77,7 @@ for image_file, folder_name in zip(images, folder_names):
                 file.write(f"{x} {y}\n")
     
     # In thông báo cho biết tọa độ các đường biên đã được lưu
-    print(f"Tọa độ các đường biên của ảnh {image_file} đã được lưu vào thư mục {folder}")
+    print(f"Save {image_file} file {folder}")
 
 # Đợi cho đến khi nhấn phím bất kỳ để đóng cửa sổ hiển thị
 cv2.waitKey(0)

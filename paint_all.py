@@ -3,7 +3,7 @@ import numpy as np
 import os
 
 # Đọc kích thước ảnh
-image_path = 'vn.jpg'
+image_path = 'vn1.png'
 image = cv2.imread(image_path)
 height, width = image.shape[:2]
 

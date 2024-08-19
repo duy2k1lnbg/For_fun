@@ -95,9 +95,10 @@ def show_image(image_path, window_name):
 # Hàm chính thực thi chương trình
 def main():
     # Xử lý ảnh đầu tiên
-    image_path1 = 'vn.jpg'
+    image_path1 = 'vn1.png'
     show_image(image_path1, 'Image 1')
-    directory1 = 'coordinates_output_IMREAD_GRAYSCALE/canny_edges'
+    #directory1 = 'coordinates_output_IMREAD_GRAYSCALE/canny_edges'
+    directory1 = 'file_img/file1'
     setup_turtle(image_path1, directory1)
 
     # # Xử lý ảnh thứ hai
