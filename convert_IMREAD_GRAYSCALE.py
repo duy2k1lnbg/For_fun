@@ -5,8 +5,12 @@ import os
 # Đọc ảnh ở chế độ grayscale
 image = cv2.imread('vn.jpg', cv2.IMREAD_GRAYSCALE)
 
-# Chuyển ảnh sang nhị phân
-_, binary_image = cv2.threshold(image, 127, 255, cv2.THRESH_BINARY)
+# # Chuyển ảnh sang nhị phân
+# _, binary_image = cv2.threshold(image, 127, 255, cv2.THRESH_BINARY)
+
+# Áp dụng Otsu's Binarization để tự động tìm ngưỡng và chuyển đổi thành ảnh nhị phân
+_, binary_image = cv2.threshold(image, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
+print(f'Threshold value: {_}')
 
 # Đảm bảo ảnh nhị phân là float64 cho các phép toán
 binary_float = np.float64(binary_image)
